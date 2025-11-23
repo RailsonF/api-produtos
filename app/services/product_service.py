@@ -1,5 +1,6 @@
 import httpx
 from app.config import settings
+from app.utils.convert_decimal import serialize_payload
 
 POSTGREST = f"{settings.SUPABASE_URL}/rest/v1"
 
@@ -26,6 +27,7 @@ async def list_products(auth: str, user_id: str):
 
 async def create_product(auth: str, payload: dict, user_id: str):
     payload["user_id"] = user_id
+    payload = serialize_payload(payload)
 
     async with httpx.AsyncClient(timeout=10) as client:
         r = await client.post(
@@ -45,6 +47,8 @@ async def create_product(auth: str, payload: dict, user_id: str):
 
 
 async def update_product(auth: str, product_id: int, payload: dict, user_id: str):
+    payload = serialize_payload(payload),
+    
     async with httpx.AsyncClient(timeout=10) as client:
         r = await client.patch(
             f"{POSTGREST}/{settings.TABLE_PRODUCTS}",

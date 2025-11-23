@@ -1,6 +1,5 @@
-# app/utils/jwt_tools.py
-
 from jose import jwt
+
 
 def extract_user_id_from_jwt(auth_header: str) -> str:
     """
