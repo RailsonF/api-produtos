@@ -10,8 +10,7 @@ router = APIRouter(prefix="/products", tags=["products"])
 
 def get_user_id_from_token(auth: str):
     # O payload do JWT do Supabase contém "sub" = user_id
-    return extract_user_id_from_jwt(auth)  # frente cuidará de decodificar se precisar
-    # MAS podemos melhorar isso depois
+    return extract_user_id_from_jwt(auth)
 
 @router.get("/")
 async def route_list(auth=Depends(get_user_token)):

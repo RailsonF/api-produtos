@@ -16,7 +16,7 @@ async def list_products(auth: str, user_id: str):
             params={
                 "select": "*",
                 "user_id": f"eq.{user_id}",
-                "order": "id.desc"
+                "order": "id.asc"
             }
         )
 

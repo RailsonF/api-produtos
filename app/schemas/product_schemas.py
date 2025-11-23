@@ -1,8 +1,6 @@
 from pydantic import BaseModel, Field, conint, condecimal
 from typing import Optional
 from uuid import UUID
-from decimal import Decimal
-from datetime import datetime
 
 Preco = condecimal(max_digits=10, decimal_places=2)
 
