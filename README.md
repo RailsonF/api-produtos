@@ -177,18 +177,20 @@ Authorization: Bearer <seu_token>
 
 ```
 app/
- ├─ auth/
- │   ├─ router.py         → rotas de login e registro
- │   └─ service.py        → integração com Supabase Auth
- ├─ products/
- │   ├─ router.py         → rotas de CRUD
- │   └─ service.py        → comunicação com PostgREST
+ ├─ dependencies/
+ │   ├─ router.py         → Contém as definições das rotas da APi
+ ├─ routes/
+ │   ├─ auth_routes.py         → Define as rotas relacionadas à autenticação, como registro e login de usuários
+ │   └─ products-routes.py        → Define as rotas para operações CRUD (Criar, Ler, Atualizar, Deletar) relacionadas aos produtos
  ├─ utils/
  │   └─ supabase_jwt.py   → validação e extração de claims do JWT
- ├─ dependencies/
- │   └─ auth.py           → validação automática do token
  ├─ schemas/
- │   └─ product_schemas.py
+ │   └─ product_schema.py           → Define os esquemas para criação, atualização e resposta de produtos, garantindo que os dados estejam no formato correto
+ ├─ services/
+ │   └─ product_service.py   → Implementa funções para listar, criar, atualizar e deletar produtos, utilizando a API do Supabase
+ ├─ utils/
+ │   └─ convert_decimal.py   → Contém a função serialize_payload, que converte valores do tipo Decimal para float antes de enviar para o Supabase.
+ │   └─ jwt_tools.py        → Contém a função extract_user_id_from_jwt, que extrai o ID do usuário do token JWT.
  ├─ main.py
  └─ config.py
 ```
