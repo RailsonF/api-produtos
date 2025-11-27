@@ -1,4 +1,4 @@
-# 📦 Catálogo de Produtos 
+#  Catálogo de Produtos 
 
 Bem-vindo à API de Catálogo de Produtos!
 Este projeto foi desenvolvido com foco em **segurança, organização e simplicidade**, utilizando:
@@ -11,7 +11,7 @@ Este projeto foi desenvolvido com foco em **segurança, organização e simplici
 
 ---
 
-### 🌐 Acessando a API
+### Acessando a API
 
 A API está publicada no Render.
 
@@ -22,7 +22,7 @@ https://api-produtos-jdw9.onrender.com
 ```
 **🔴🔴OBS: Se demorar a carregar é por que o render deixa o projeto suspenso quando não está sendo utilizado, a primeira chamada pode demorar de 30 a 50 segundos**
 
-### 📄 Documentação Interativa (Swagger)
+###  Documentação Interativa (Swagger)
 
 Acesse:
 
@@ -39,7 +39,7 @@ A interface Swagger permite: </br>
 
 ---
 
-# 🔑 Autenticação (Supabase Auth)
+#  Autenticação (Supabase Auth)
 
 Toda autenticação é feita **no Supabase**, e **a API não cria usuários na mão**.
 Existe **registro** e **login**, e cada login retorna um **JWT** usado nas requisições.
